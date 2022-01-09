@@ -60,7 +60,7 @@ header {
 .card{
     background:white;
     padding: 1.5rem 2rem;
-    border-radius: 0.25rem;
+    border-radius: 0.95rem;
 
     margin-bottom: 2rem;
     color:var(--dark-blue);
