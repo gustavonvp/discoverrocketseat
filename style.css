@@ -48,11 +48,14 @@ header {
 
 /* Balance ================== */
 #balance {
-    margin-top:  -8rem;
+    margin-top: -8rem;
+    
 }
 
 #balance h2 {
-    margin-top:  -8rem;
+    margin-top: -8rem;
+    color: white;
+    margin-left: 1rem;
 }
 
 
@@ -61,7 +64,8 @@ header {
     background:white;
     padding: 1.5rem 2rem;
     border-radius: 0.95rem;
-
+    margin-left: 7rem;
+    margin-right: 7rem;
     margin-bottom: 2rem;
     color:var(--dark-blue);
 }
@@ -80,6 +84,19 @@ header {
     background: #49AA26;
     color: white;
 }
+
+/* Section  =================== */
+
+#transaction {
+    background:white;
+    padding: 1.5rem 2rem;
+    border-radius: 0.95rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    margin-bottom: 2rem;
+    color:var(--dark-blue);
+}
+
 
 
 /* Table  =================== */
