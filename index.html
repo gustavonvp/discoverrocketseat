@@ -114,11 +114,39 @@
                         <input 
                         
                         type="number" 
-                        id="amount" 
+                        id="amount"
+                        step="0.01" 
                         name="amount"
-                        placeholder="Descrição"
+                        placeholder="0,00"
+                        
                         />
+
+                        <small class="help">Use o sinal - (negativo) para 
+                            despesas e , (virgula) para casas decimais</small>
                     </div>
+
+
+                    
+                    <div class="input-group">
+                        <label class="sr-only" for="date">Date</label>
+                        <input 
+                        
+                        type="date" 
+                        id="date"
+                        step="0.01" 
+                        name="date"
+                        placeholder="Data"
+                        
+                        />
+
+                    </div>
+
+                    <div class="input-group actions">
+                        <a href="a" class="button cancel">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+
+
                 </form>
             </div>
             

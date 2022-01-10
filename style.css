@@ -205,8 +205,47 @@ td.expense {
 .modal {
     background: #F0F2f5;
     padding: 2.4rem;
+    width: 90%;
+    max-width: 500px;
 }
 
+
+/* Form ==================== */
+#form {
+    max-width: 500px;
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+}
+
+.input-group small {
+    border-radius: 0.2rem;
+    padding: 0.13rem;
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    border-radius: 0.33rem;
+    margin-bottom: 0.33rem;
+    
+}
 
 /* table thead tr th:first-child,
 table tbody tr td:first-child
