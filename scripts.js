@@ -30,73 +30,9 @@ const Storage = {
       localStorage.setItem('dev.finances:transactions', JSON.stringify(transactions));
     }
   }
-  
-
-  const Utils = {
-    formatAmount(value) {
-      value = Number(value.replace(/\,\./g, "")) * 100;
-      
-      return value;
-    },
-  
-    formatDate(date) {
-      const splittedDate = date.split("-");
-      return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
-    },
-  
-    
-    formatCurrency(value) {
-      const signal = Number(value) < 0 ? "-" : "";
-  
-      value = String(value).replace(/\D/g, "");
-  
-      value = Number(value) / 100;
-  
-      value = value.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL"
-      });
-  
-     return signal + value;
-    }
-  }
 
 
-
-const transactions = [
-{
-    id:1,
-    description: 'Luz',
-    amount: -50000,
-    date: '23/01/2021'
-},
-
-{
-    id:2,
-    description: 'Website',
-    amount: 50000,
-    date: '23/01/2021'
-},
-
-
-{
-    id:3,
-    description: 'Internet',
-    amount: -20000,
-    date: '23/01/2021'
-},
-
-
-{
-    id:4,
-    description: 'App',
-    amount: 20000,
-    date: '23/01/2021'
-},
-
-
-]
-const Transaction = {
+  const Transaction = {
     all: Storage.get(),
   
     add(transaction) {
@@ -136,9 +72,7 @@ const Transaction = {
     }
   }
 
-// Substituir os dados do HTML com os dados do JS
-
-const DOM = {
+  const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
   
     // Append new Transaction to their container on html
@@ -187,6 +121,75 @@ const DOM = {
         DOM.transactionsContainer.innerHTML = "";
     }
   }
+
+  const Utils = {
+    formatAmount(value) {
+      value = Number(value.replace(/\,\./g, "")) * 100;
+      
+      return value;
+    },
+  
+    formatDate(date) {
+      const splittedDate = date.split("-");
+      return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
+    },
+  
+    
+    formatCurrency(value) {
+      const signal = Number(value) < 0 ? "-" : "";
+  
+      value = String(value).replace(/\D/g, "");
+  
+      value = Number(value) / 100;
+  
+      value = value.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL"
+      });
+  
+     return signal + value;
+    }
+  }
+
+
+
+// const transactions = [
+// {
+//     id:1,
+//     description: 'Luz',
+//     amount: -50000,
+//     date: '23/01/2021'
+// },
+
+// {
+//     id:2,
+//     description: 'Website',
+//     amount: 50000,
+//     date: '23/01/2021'
+// },
+
+
+// {
+//     id:3,
+//     description: 'Internet',
+//     amount: -20000,
+//     date: '23/01/2021'
+// },
+
+
+// {
+//     id:4,
+//     description: 'App',
+//     amount: 20000,
+//     date: '23/01/2021'
+// },
+
+
+// ]
+
+// Substituir os dados do HTML com os dados do JS
+
+
      
 // transactions.forEach(function(transaction){
 //     DOM.addTransaction(transaction)
@@ -229,7 +232,8 @@ const Form = {
         date
       };
     },
-  
+
+
     clearFields() {
       Form.description.value = "";
       Form.amount.value = "";
@@ -253,7 +257,9 @@ const Form = {
 
 const App = {
     init() {
-      Transaction.all.forEach(DOM.addTransaction);
+      Transaction.all.forEach((transaction, index) => {
+        DOM.addTransaction(transaction, index);
+      });
   
       DOM.updateBalance();
   
